@@ -1,0 +1,24 @@
+{
+  "author" : "",
+  "commands" : [
+    {
+      "script" : "script.cocoascript",
+      "name" : "Clean up Paparazzi PDFs",
+      "handlers" : {
+        "run" : "onRun"
+      },
+      "identifier" : "com.bohemiancoding.sketch.runscriptidentifier"
+    }
+  ],
+  "menu" : {
+    "title" : "Clean up Paparazzi PDFs",
+    "items" : [
+      "com.bohemiancoding.sketch.runscriptidentifier"
+    ]
+  },
+  "identifier" : "com.example.sketch.6627c0e2-1ca3-4862-820c-ebcb526789f9",
+  "version" : "1.3",
+  "description" : "",
+  "authorEmail" : "",
+  "name" : "Clean up Paparazzi PDFs"
+}

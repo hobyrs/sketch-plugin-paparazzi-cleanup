@@ -1,0 +1,43 @@
+var onRun = function(context) {
+    var doc = context.document;
+    var page = doc.currentPage();
+    var selection = context.selection;
+
+	if(selection.count() == 0){
+	  doc.showMessage("Please select something.");
+      return;
+	} else {
+	  for(var i = 0; i < selection.count(); i++){
+		if(selection[i].class() == "MSArtboardGroup"){
+			var artboard = selection[i];
+
+			var loop = artboard.children().objectEnumerator();
+			var layer;
+			while (layer = loop.nextObject()) {
+				// 1. Find all groups with "Group" in the name and ungroup them
+				if (layer.class() == "MSLayerGroup" && layer.name().match("Group")) {
+					layer.ungroup();
+				}
+				// 2. Find all layers that have "Clip" in the name and delete them
+				if (
+                    (layer.class() == "MSShapeGroup" ||
+                     layer.class() == "MSShapePathLayer") 
+                      && layer.name().match("Clip"))
+                  {
+					layer.removeFromParent();
+				}
+				// 3. Find all text layers and move them 3px down
+				if (layer.class() == "MSTextLayer") {
+					layer.frame().setY(layer.frame().y() + 3);
+				}
+				// 4. Find all Poppins text layers and move 2 more px down
+				if (layer.class() == "MSTextLayer" && layer.fontPostscriptName() == "Poppins-Bold") {
+					layer.frame().setY(layer.frame().y() + 2);
+				}
+			}
+		} 
+	  }
+	}
+
+};
+          

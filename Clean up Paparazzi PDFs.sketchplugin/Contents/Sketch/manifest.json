@@ -3,7 +3,7 @@
   "commands" : [
     {
       "script" : "script.cocoascript",
-      "name" : "Clean up Paparazzi PDFs",
+      "name" : "Clean up this Paparazzi PDF",
       "handlers" : {
         "run" : "onRun"
       },
@@ -11,13 +11,13 @@
     }
   ],
   "menu" : {
-    "title" : "Clean up Paparazzi PDFs",
+    "title" : "Clean Paparazzi",
     "items" : [
       "com.bohemiancoding.sketch.runscriptidentifier"
     ]
   },
   "identifier" : "com.example.sketch.6627c0e2-1ca3-4862-820c-ebcb526789f9",
-  "version" : "1.3",
+  "version" : "1.4",
   "description" : "",
   "authorEmail" : "",
   "name" : "Clean up Paparazzi PDFs"
